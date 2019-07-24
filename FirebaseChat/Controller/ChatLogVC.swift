@@ -61,7 +61,7 @@ class ChatLogVC: UICollectionViewController, UITextFieldDelegate, UICollectionVi
                       "to_id": toId!,
                       "from_id": fromId,
                       "time_stamp": timestamp] as [String : Any];
-        /* userReference.updateChildValues(values as [AnyHashable : Any]);  to simply update only messages  */
+        
         userReference.updateChildValues(values as [AnyHashable : Any]) { (error, ref) in
             if error != nil {
                 print(error.debugDescription);
