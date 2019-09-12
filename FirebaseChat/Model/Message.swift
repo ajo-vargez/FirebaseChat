@@ -10,18 +10,18 @@ import Foundation
 import Firebase
 
 struct Message {
-    
-    var fromId: String?
-    var text: String?
-    var timestamp: Int?
-    var toId: String?
-    
-    func getChatPartnersId() -> String? {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            let err = "Error";
-            return err;
-        }
-        return fromId == uid ? toId! : fromId!;
+
+  var fromId: String?
+  var text: String?
+  var timestamp: Int?
+  var toId: String?
+
+  func getChatPartnersId() -> String? {
+    guard let uid = Auth.auth().currentUser?.uid else {
+      let err = "Error";
+      return err;
     }
-    
+    return fromId == uid ? toId! : fromId!;
+  }
+
 } // Struct
